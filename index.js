@@ -69,6 +69,7 @@ document.getElementById("equals").addEventListener("click", calculate);
 // Calculate function
 function calculate() {
   // In case of wrong expression, error set as default
+  // Error will appear on console
   result_input.value = "ERRO";
   result_input.classList.add("error");
 
