@@ -1,3 +1,4 @@
+// Calculate function
 import calculate from "./calculate.js";
 
 // Array with allowed keys to be typed in the input bar
@@ -23,7 +24,7 @@ const allowed_keys = [
 ];
 
 // Adds restrictions of what can be typed in the input bar
-export function keyTyped(result_input) {
+function keyTyped(result_input) {
   input.addEventListener("keydown", function (ev) {
     ev.preventDefault();
 
@@ -47,7 +48,7 @@ export function keyTyped(result_input) {
 }
 
 // Implements click function on the buttons to add their values to the input bar
-export function keyPressed() {
+function keyPressed() {
   document.querySelectorAll(".char-key").forEach(function (char_key) {
     char_key.addEventListener("click", function () {
       input.value += char_key.dataset.value;
@@ -56,14 +57,14 @@ export function keyPressed() {
 }
 
 // Calculate function for Equals button
-export function calculateEqualsButton(result_input) {
+function calculateEqualsButton(result_input) {
   document.getElementById("equals").addEventListener("click", function () {
     calculate(result_input);
   });
 }
 
 // Clear function for C button
-export function clear(input, result_input, button_copy) {
+function clear(input, result_input, button_copy) {
   document.getElementById("clear").addEventListener("click", function () {
     input.value = "";
     result_input.value = "";
@@ -75,7 +76,7 @@ export function clear(input, result_input, button_copy) {
 }
 
 // Copy Result function
-export function copyResult(result_input, button_copy) {
+function copyResult(result_input, button_copy) {
   document
     .getElementById("copy-to-clipboard")
     .addEventListener("click", function () {
@@ -96,3 +97,5 @@ export function copyResult(result_input, button_copy) {
       }
     });
 }
+
+export { keyTyped, keyPressed, calculateEqualsButton, clear, copyResult }
